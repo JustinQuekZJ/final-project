@@ -72,7 +72,7 @@ map.on('load', function () {
         generateId: true // This will add an id to each feature, necessary for using featureState
     });
 
-    const precinctBoundariesSource = map.getSource('precinct-boundaries');
+    const precinctBoundariesSource = map.querySourceFeatures('precinct-boundaries');
     console.log("Number of features:", precinctBoundariesSource._data.features);
 
     // Load in precinct data for making stepped color fill
