@@ -75,7 +75,7 @@ map.on('load', function () {
     //const precinctBoundariesSource = map.querySourceFeatures('precinct-boundaries');
     //console.log("Number of features:", precinctBoundariesSource._data.features);
 
-    // Load in precinct data for making stepped color fill
+    /*// Load in precinct data for making stepped color fill
     fetch('js/stations.js')
         .then(response => response.text()) // Read response as text
         .then(data => {
@@ -121,7 +121,39 @@ map.on('load', function () {
         })
         .catch(error => {
             console.error('Error loading station data:', error);
-        });
+        });*/
+
+    map.addLayer({
+        id: 'precinct-boundaries-fill',
+        type: 'fill',
+        source: 'precinct-boundaries',
+        paint: {
+            'fill-color': [
+                'step',
+                ['to-number', ['get', 'StopsPer1000']],
+                'rgba(222, 222, 222, 1)',
+                37, [
+                    'interpolate',
+                    ['linear'],
+                    ['to-number', ['get', 'StopsPer1000']],
+                    37, 'rgba(253, 223, 104, 1)',    
+                    400, 'rgba(248, 191, 97, 1)', 
+                    600, 'rgba(243, 160, 92, 1)', 
+                    800, 'rgba(237, 128, 85, 1)',
+                    1000, 'rgba(233, 97, 80, 1)',
+                    1400, 'rgba(230, 67, 73, 1)',
+                    2000, 'rgba(223, 19, 19, 1)',
+                    4507, 'rgba(170, 14, 14, 1)',  
+                ]
+            ],
+            'fill-opacity': [
+                'case',
+                ['boolean', ['feature-state', 'hover'], false],
+                0.5, // Opacity when hovered
+                1 // Opacity when not hovered
+            ]
+        }
+    });
 
     // Add the precinct fill layer
     /*map.addLayer({
@@ -145,7 +177,7 @@ map.on('load', function () {
         type: 'line',
         source: 'precinct-boundaries',
         paint: {
-            'line-color': '#6b6b6b'
+            'line-color': '#575757'
         }
     });
 
@@ -163,7 +195,7 @@ map.on('load', function () {
         source: 'borough-boundaries',
         paint: {
             'line-color': '#1f1d1d',
-            'line-width': 1.2
+            'line-width': 1.6
         }
     });
 
