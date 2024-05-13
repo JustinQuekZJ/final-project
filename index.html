@@ -27,17 +27,25 @@
                 Instructions:
             </strong>
             <p>
-                This is a crime and safety tool for residents in New York City. Users may interact with the map in two ways:
+                This is a crime and safety tool for residents in New York City. Users may interact with the map in two
+                ways:
             </p>
             <p class="inst-point">
                 1: Hover over each precinct to view the stop-and-frisk and major crime statistics in that precinct.
             </p>
             <p class="inst-point">
-                2: Enter your current location in the search bar at the top right-hand corner and view the NYPD station in your precinct, along with a route to get there.
+                2: Enter your current location in the search bar at the top right-hand corner and view the NYPD station
+                in your precinct, along with a route to get there.
             </p>
         </div>
+        <!-- Buttons for selecting options -->
+        <div class="options">
+            <button id="police-stops-button">Police Stops</button>
+            <button id="major-crimes-button">Major Crimes</button>
+            <button id="civilian-complaints-button">Civilian Complaints</button>
+        </div>
     </div>
-    
+
     <!--Map container div-->
     <div id="map"></div>
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.2.0/mapbox-gl.js"></script>
@@ -83,8 +91,6 @@
             <span>4507</span>
         </div>
     </div>
-
-
 </body>
 
 </html>
