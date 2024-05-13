@@ -89,12 +89,29 @@ map.on('load', function () {
     // Add event listeners for each button
     document.getElementById('police-stops-button').addEventListener('click', function () {
         updateMap('StopsPer1000');
-        updateLegend('StopsPer1000');
+        // Show police stops legend
+        document.getElementById('legend-police-stops').classList.remove('hidden');
+        // Hide other legends
+        document.getElementById('legend-major-crimes').classList.add('hidden');
+        document.getElementById('legend-911-calls').classList.add('hidden');
     });
 
     document.getElementById('major-crimes-button').addEventListener('click', function () {
         updateMap('MajCrime');
-        updateLegend('MajCrime');
+        // Show major crimes legend
+        document.getElementById('legend-major-crimes').classList.remove('hidden');
+        // Hide other legends
+        document.getElementById('legend-police-stops').classList.add('hidden');
+        document.getElementById('legend-911-calls').classList.add('hidden');
+    });
+
+    document.getElementById('911-calls-button').addEventListener('click', function () {
+        updateMap('Calls911');
+        // Show 911 calls legend
+        document.getElementById('legend-911-calls').classList.remove('hidden');
+        // Hide other legends
+        document.getElementById('legend-police-stops').classList.add('hidden');
+        document.getElementById('legend-major-crimes').classList.add('hidden');
     });
 
     // Define the updateMap function to update map fill layer based on metric chosen
@@ -136,6 +153,21 @@ map.on('load', function () {
                     'rgba(230, 67, 73, 1)',
                     'rgba(223, 19, 19, 1)',
                     //'rgba(170, 14, 14, 1)'
+                ];
+                break;
+            case 'Calls911':
+                property = 'Calls911';
+                // Define color stops and ranges for 911 calls
+                colorStops = [2500, 5000, 10000, 15000, 20000, 25000, 30000, 35653];
+                colorRange = [
+                    'rgba(253, 223, 104, 1)',
+                    'rgba(250, 217, 85, 1)',
+                    'rgba(248, 191, 97, 1)',
+                    'rgba(243, 160, 92, 1)',
+                    'rgba(237, 128, 85, 1)',
+                    'rgba(233, 97, 80, 1)',
+                    'rgba(230, 67, 73, 1)',
+                    'rgba(223, 19, 19, 1)',
                 ];
                 break;
             default:
@@ -202,13 +234,20 @@ map.on('load', function () {
                     tooltipContent = ``
                         + `<div><strong><u>${station.Precinct} Precinct</u></strong></div>`
                         + `<div><i>${station.Neighborhoods}</i></div>`
-                        + `<div><strong>${station.StopsPer1000} police stops</strong> per 1000 residents</div>`;
+                        + `<div><strong>${station.StopsPer1000} police stops</strong> per 1000 residents</div>`
+                        + `<div>${station.TotalStops} total stops to date</div>`;
                     break;
                 case 'MajCrime':
                     tooltipContent = ``
                         + `<div><strong><u>${station.Precinct} Precinct:</u></strong></div>`
                         + `<div><i>${station.Neighborhoods}</i></div>`
                         + `<div><strong>${station.MajCrime} major crimes</strong> in 2024</div>`;
+                    break;
+                case 'Calls911':
+                    tooltipContent = ``
+                        + `<div><strong><u>${station.Precinct} Precinct:</u></strong></div>`
+                        + `<div><i>${station.Neighborhoods}</i></div>`
+                        + `<div><strong>${station.Calls911} calls</strong> received in 2024</div>`;
                     break;
                 default:
                     tooltipContent = ``
@@ -248,7 +287,7 @@ map.on('load', function () {
         map.getCanvas().style.cursor = '';
     });
 
-    // To update color bar content based on which state is chosen
+    /*// To update color bar content based on which state is chosen
     // Define color ranges and corresponding values for each metric
     const colorRanges = {
         StopsPer1000: [
@@ -273,7 +312,7 @@ map.on('load', function () {
         ]
     };
 
-    // Function to update legend dynamically based on the selected metric
+    /// Function to update legend dynamically based on the selected metric
     function updateLegend(metric) {
         const legend = document.querySelector('.legend');
         const legendItemsContainer = legend.querySelector('.legend-items-container');
@@ -295,7 +334,7 @@ map.on('load', function () {
             legendItemContainer.appendChild(legendValue);
             legendItemsContainer.appendChild(legendItemContainer);
         });
-    }
+    }*/
 
 });
 
