@@ -287,54 +287,23 @@ map.on('load', function () {
         map.getCanvas().style.cursor = '';
     });
 
-    /*// To update color bar content based on which state is chosen
-    // Define color ranges and corresponding values for each metric
-    const colorRanges = {
-        StopsPer1000: [
-            { color: 'rgba(253, 223, 104, 1)', value: 37 },
-            { color: 'rgba(248, 191, 97, 1)', value: 400 },
-            { color: 'rgba(243, 160, 92, 1)', value: 600 },
-            { color: 'rgba(237, 128, 85, 1)', value: 800 },
-            { color: 'rgba(233, 97, 80, 1)', value: 1000 },
-            { color: 'rgba(230, 67, 73, 1)', value: 1400 },
-            { color: 'rgba(223, 19, 19, 1)', value: 2000 },
-            { color: 'rgba(170, 14, 14, 1)', value: 4507 }
-        ],
-        MajCrime: [
-            { color: 'rgba(253, 223, 104, 1)', value: 36 },
-            { color: 'rgba(250, 217, 85, 1)', value: 250 },
-            { color: 'rgba(248, 191, 97, 1)', value: 400 },
-            { color: 'rgba(243, 160, 92, 1)', value: 600 },
-            { color: 'rgba(237, 128, 85, 1)', value: 800 },
-            { color: 'rgba(233, 97, 80, 1)', value: 1000 },
-            { color: 'rgba(230, 67, 73, 1)', value: 1100 },
-            { color: 'rgba(223, 19, 19, 1)', value: 1211 }
-        ]
-    };
+    // Get all buttons
+    const buttons = document.querySelectorAll('.button');
 
-    /// Function to update legend dynamically based on the selected metric
-    function updateLegend(metric) {
-        const legend = document.querySelector('.legend');
-        const legendItemsContainer = legend.querySelector('.legend-items-container');
-        legendItemsContainer.innerHTML = ''; // Clear existing legend items
+    // Add click event listener to each button
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Remove 'active' class from all buttons
+            buttons.forEach(btn => {
+                if (btn !== this) {
+                    btn.classList.remove('active');
+                }
+            });
 
-        // Iterate over color ranges for the selected metric
-        colorRanges[metric].forEach(({ color, value }) => {
-            const legendItemContainer = document.createElement('div');
-            legendItemContainer.classList.add('legend-item-container');
-
-            const legendItem = document.createElement('div');
-            legendItem.classList.add('legend-item');
-            legendItem.style.backgroundColor = color;
-
-            const legendValue = document.createElement('span');
-            legendValue.textContent = value;
-
-            legendItemContainer.appendChild(legendItem);
-            legendItemContainer.appendChild(legendValue);
-            legendItemsContainer.appendChild(legendItemContainer);
+            // Toggle 'active' class for the clicked button
+            this.classList.toggle('active');
         });
-    }*/
+    });
 
 });
 

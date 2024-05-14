@@ -114,14 +114,14 @@ body {
 
 .button {
     width: 100%; /* To make button span across the entire sidebar */
-    background-color: #e37521; 
+    background-color: #ff9341; 
     border: none;
     color: white;
     padding: 15px 0;
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 18px;
+    font-size: 15px;
     margin: 0; /* Remove default margin */
     cursor: pointer;
     border-radius: 10px; /* For rounded corners */
@@ -131,12 +131,13 @@ body {
 
 /* Hover effect */
 .button:hover {
-    background-color: #f9aa6d; 
+    background-color: #f4ae78; 
 }
 
 /* Active effect */
-.button:active {
-    background-color: #f9aa6d;
+.button.active {
+    background-color: #e56300;
     transform: translateY(1.5px); /* Move the button down when clicked */
-    border:#000;
+    border: 2px solid black;
 }
+
