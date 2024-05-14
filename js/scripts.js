@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoianVzdGlucXVla3pqIiwiYSI6ImNsdWx1NjV2ZjE1b2oya
 var mapOptions = {
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
-    zoom: 9.77,
+    zoom: 9.4,
     center: [-74.01129, 40.70438], // Coordinates of NYC
     hash: true,
     //dragPan: false,
@@ -144,7 +144,7 @@ map.on('load', function () {
                 // Define color stops and ranges for major crimes
                 colorStops = [36, 250, 400, 600, 800, 1000, 1100, 1211];
                 colorRange = [
-                    'rgba(253, 223, 104, 1)',
+                    'rgba(249, 226, 135, 1)',
                     'rgba(250, 217, 85, 1)',
                     'rgba(248, 191, 97, 1)',
                     'rgba(243, 160, 92, 1)',
@@ -152,7 +152,6 @@ map.on('load', function () {
                     'rgba(233, 97, 80, 1)',
                     'rgba(230, 67, 73, 1)',
                     'rgba(223, 19, 19, 1)',
-                    //'rgba(170, 14, 14, 1)'
                 ];
                 break;
             case 'Calls911':
@@ -160,7 +159,7 @@ map.on('load', function () {
                 // Define color stops and ranges for 911 calls
                 colorStops = [2500, 5000, 10000, 15000, 20000, 25000, 30000, 35653];
                 colorRange = [
-                    'rgba(253, 223, 104, 1)',
+                    'rgba(249, 226, 135, 1)',
                     'rgba(250, 217, 85, 1)',
                     'rgba(248, 191, 97, 1)',
                     'rgba(243, 160, 92, 1)',
