@@ -76,7 +76,7 @@ body {
     border-radius: 5px; /* Add rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
     z-index: 1000; /* Ensure it appears above other content */
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .legend-title {
