@@ -6,7 +6,7 @@ As a police officer from Singapore, I wanted to try to build something related t
 
 This tool allows officers to visualize different law enforcement-related statistics, such as police stops, major crimes, and 911 calls, on a precinctual level. The map's precinct fill layer has a stepped color gradient based on the value of each statistic to allow for comparative visualization between precincts.
 
-Users can hover over each precinct to view the statistics via a tooltip, and can change the state of the map by clicking buttons to toggle among statistics.
+Users can hover over each precinct to view the statistics via a tooltip, and can change the state of the map by clicking buttons to toggle among the various statistics.
 
 A simple and fun webmap, enjoy interacting with it!
 
