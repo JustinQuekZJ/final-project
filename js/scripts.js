@@ -5,7 +5,7 @@ var mapOptions = {
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
     zoom: 9.4,
-    center: [-74.02756, 40.69869], // Coordinates of NYC
+    center: [-74.02756, 40.70344], // Coordinates of NYC
     hash: true,
     scrollZoom: false
 }
