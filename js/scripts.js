@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoianVzdGlucXVla3pqIiwiYSI6ImNsdWx1NjV2ZjE1b2oya
 var mapOptions = {
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
-    zoom: 9.4,
+    zoom: 9.3,
     center: [-74.02756, 40.70344], // Coordinates of NYC
     hash: true,
     scrollZoom: false
