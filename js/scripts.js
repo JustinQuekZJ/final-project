@@ -259,8 +259,8 @@ map.on('load', function () {
             tooltip.innerHTML = tooltipContent;
 
             tooltip.style.display = "block";
-            tooltip.style.left = e.point.x + 'px';
-            tooltip.style.top = e.point.y + 'px';
+            tooltip.style.left = (e.point.x+15) + 'px';
+            tooltip.style.top = (e.point.y-15) + 'px';
 
             // Change cursor style
             map.getCanvas().style.cursor = 'pointer';
