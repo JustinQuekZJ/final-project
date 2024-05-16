@@ -63,14 +63,14 @@ body {
 }
 
 .legend {
-    position: absolute; 
+    position: absolute;
     bottom: 25px; 
     right: 25px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: white; /* Set a background color to make it stand out */
+    background-color: white; 
     border-radius: 5px; /* Add rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
     z-index: 1000; /* Ensure it appears above other content */
