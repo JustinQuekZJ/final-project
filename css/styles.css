@@ -63,15 +63,12 @@ body {
 }
 
 .legend {
-    position: absolute;
-    bottom: 5px;
-    left: 80%; /* Center horizontally */
-    transform: translateX(-50%);
+    position: absolute; 
+    bottom: 25px; 
+    right: 25px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 35px;
-    margin-right: 35px;    
     padding: 10px;
     background-color: white; /* Set a background color to make it stand out */
     border-radius: 5px; /* Add rounded corners */
